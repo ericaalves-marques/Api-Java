@@ -35,6 +35,11 @@ public class Controle {
         return acao.findByCodigo(codigo);
     }
 
+    @GetMapping("/api/contador")
+    public long contador(){
+        return acao.count();
+    }
+
     @PutMapping("/api")
     public Pessoa editar(@RequestBody Pessoa obj){
         return acao.save(obj);
