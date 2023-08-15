@@ -3,6 +3,7 @@ package br.com.projeto.api.controle;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +38,13 @@ public class Controle {
     @PutMapping("/api")
     public Pessoa editar(@RequestBody Pessoa obj){
         return acao.save(obj);
+    }
+
+    @DeleteMapping("/api/{codigo}")
+    public void remover(@PathVariable int codigo){
+        Pessoa obj = selcionarPeloCodigo(codigo);
+
+        acao.delete(obj);
     }
 
     @GetMapping("")
