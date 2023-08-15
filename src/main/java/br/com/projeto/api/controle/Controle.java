@@ -57,6 +57,11 @@ public class Controle {
         return acao.findByOrderByNome();
     }
 
+    @GetMapping("/api/ordenarNomes2")
+    public List<Pessoa> ordenarNomes2(){
+        return acao.findByNomeOrderByIdade("Breno");
+    }
+
     @GetMapping("")
     public String mensagem() {
         return "Hello World!";

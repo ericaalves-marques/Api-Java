@@ -18,4 +18,7 @@ public interface Repositorio extends CrudRepository<Pessoa, Integer> {
    //List<Pessoa> findByCodigo(int codigo);
 
    List<Pessoa> findByOrderByNome();
+
+    List<Pessoa> findByNomeOrderByIdade(String nome);
+
 }
