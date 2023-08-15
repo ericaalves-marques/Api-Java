@@ -1,5 +1,7 @@
 package br.com.projeto.api.controle;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,10 @@ public class Controle {
         return acao.save(obj);
     }
 
+    @GetMapping("/api")
+    public List<Pessoa> selecionar(){
+        return acao.findAll();
+    }
 
     @GetMapping("")
     public String mensagem() {
