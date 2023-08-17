@@ -36,7 +36,7 @@ public class Servico {
         return new ResponseEntity<>(acao.findAll(), HttpStatus.OK);
     }
 
-    //metodo para selecionar pessoas atraves d0o codigo
+    //metodo para selecionar pessoas atraves do codigo
     public ResponseEntity<?> selecionarPeloCodigo(int codigo){
         if(acao.countByCodigo(codigo) == 0){
             mensagem.setMensagem("Não foi encontrada nenhuma pessoa");
@@ -49,7 +49,7 @@ public class Servico {
     //metodo para editar dados
     public ResponseEntity<?> editar(Pessoa obj){
 
-        if(acao.countByCodigo(obj.getCodigo() == 0)){
+        if(acao.countByCodigo(obj.getCodigo()) == 0){
             mensagem.setMensagem("O código informado não existe");
             return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
         }else if(obj.getNome().equals("")){
